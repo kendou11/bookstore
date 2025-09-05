@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol {list-style: none;}
+a {text-decoration: none; color: #333;}
+
+body {font-family: 'Pretendard';}
+.container {width: 1120px; height: 100%; margin: 0 auto; background-color: #aaa;}
+
+/* header */
+header {width: 100%; height: 115px; background-color: gold;}
+.header_top {width: 100%; height: 50%; display: flex; justify-content: space-between; align-items: center; background-color: pink;}
+.logo {width: 70px; height: 35px; background-color: green;}
+.h_right {width: 400px; height: 35px; display: flex; justify-content: space-between;  background-color: yellow;}
+.search {width: 275px; height: 100%; background-color: plum;}
+.mypage {width: 120px; height: 100%; background-color: red;}
+
+.header_b {width: 100%; height: 50%; display: flex; justify-content: space-between; align-items: center; background-color: skyblue; }
+.header_b nav {width: 300px; height: 25px; background-color: peru; }
+
+.category {width: 225px; height: 25px; background-color: wheat;}
+
+
+
+/* footer */
+footer {width: 100%; height: 350px; background-color: orange;}
+
+
+
+
