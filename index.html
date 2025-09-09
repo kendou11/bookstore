@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -20,8 +22,14 @@
                     <i class="fa-brands fa-instagram"></i>
                 </div>
                 <div class="h_right">
-                    <div class="search"></div>
-                    <div class="mypage"></div>
+                   
+                    <div class="search_icon">
+                        <svg width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="fig-1hsho1o"><path fill-rule="evenodd" d="M13.28 8.18a5.1 5.1 0 11-10.2 0 5.1 5.1 0 0110.2 0zm-1.031 5.069a6.5 6.5 0 11.991-.989l4.695 4.695a.7.7 0 11-.99.99l-4.696-4.696z"></path></svg>
+                        <input type="text" value="" class="search">
+                    </div>
+                    <div class="mypage">
+                        <h4>로그인/회원가입</h4>
+                    </div>
                 </div>
             </div>
             <div class="header_b">
@@ -32,12 +40,36 @@
                         <li><a href="#">웹소설</a></li>
                         <li><a href="#">도서</a></li>
                         <li><a href="#">셀렉트 </a></li>
-                    </ul> 
+                    </ul>
                 </nav>
-                <div class="category"></div>
+                <div class="category">
+                     <h4>☰ 전체 카테고리</h4>
+                    <h4>캐시충전</h4>
+                </div>
             </div>
+
+        </div>
         </div>
     </header>
+    <div class="container">
+        <div class="header_c">
+
+            <ul>
+                <li><a href="#">추천</a></li>
+                <li><a href="#">기획전</a></li>
+                <li><a href="#">소설</a></li>
+                <li><a href="#">인문/사회/역사</a></li>
+                <li><a href="#">경영/경제</a></li>
+                <li><a href="#">에세이/시</a></li>
+                <li><a href="#">자기계발</a></li>
+            </ul>
+
+
+        </div>
+    </div>
+
+
+
 
     <div id="slider">
         <!-- Swiper -->
@@ -53,31 +85,163 @@
         </div>
     </div>
 
-    <div class="new">
-        <!-- Swiper -->
-        <div class="swiper new_item">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
-            </div> 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>           
-        </div>
+    <div id="icon_menu">
+        <a href="#">
+            <div class="icon">N</div>
+            <span>신간</span>
+        </a>
+        <a href="#">
+            <div class="icon">👑</div>
+            <span>북스베스트</span>
+        </a>
+        <a href="#">
+            <div class="icon">R ONLY</div>
+            <span>단독 선출간</span>
+        </a>
+        <a href="#">
+            <div class="icon">🥳</div>
+            <span>이벤트</span>
+        </a>
+        <a href="#">
+            <div class="icon">🤣</div>
+            <span>이달의 쿠폰</span>
+        </a>
+        <a href="#">
+            <div class="icon">😁</div>
+            <span>신작 캘린더</span>
+        </a>
+        <a href="#">
+            <div class="icon">😊</div>
+            <span>해택 모아봄</span>
+        </a>
     </div>
 
 
-    <footer>
-        <div class="container">
 
+
+    <div class="container">
+        <h3> 지금 많이 읽고 있는 작품</h3>
+        <div class="new">
+
+            <!-- Swiper -->
+            <div class="swiper new_item">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+        <h3> 오늘, 리디의 발견</h3>
+        <div class="discovery">
+            <!-- Swiper -->
+            <div class="swiper new_item">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+        <h3> 지금, 리디에서만 볼 수 있는 웹툰</h3>
+        <div class="container">
+        <div class="discovery_2">
+            <!-- Swiper -->
+            <div class="swiper new_item">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="keyword">
+        <h3>웹툰/만화 키워드 검색</h3>
+        <ul class="keyword_ul">
+            <li>#로맨스판타지</li>
+            <li>#피폐물</li>
+            <li>방의/영혼</li>
+            <li>로맨스</li>
+            <li>집작남</li>
+            <li>사내연애</li>
+            <li>완결</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <div class="foot">
+        <div class="foot_left">
+            <div class="customer">
+                <ul>
+                    <li>고객센터</li>
+                    <li>공지사항</li>
+                    
+                </ul>
+
+                
+            </div>
+            <div class="memo">
+                 <ul>
+                    <li>서비스</li>
+                    <li>제휴카드</li>
+                    <li>뷰어 다운로드</li>
+                    <li>CP사이트</li>
+                    <li>리디바탕</li>
+                </ul>
+            </div>
+           
+            <div class="memo_2">
+                 <ul>
+                    <li>기타문의</li>
+                    <li>콘텐츠 제공 문의</li>
+                    <li>사업 제휴 문의</li>
+                
+                </ul>
+            </div>
+            <div class="memo_3">
+                 <ul>
+                    <li>회사</li>
+                    <li>회사 소개</li>
+                    <li>인재 채용</li>
+                
+                </ul>
+            </div>
+        </div>
+        <div class="foot_right">
+            </div>
         </div>
     </footer>
+
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -103,9 +267,14 @@
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
-            },            
+            },
         });
+
+
+
     </script>
-    
+
+
 </body>
+
 </html>
