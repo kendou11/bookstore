@@ -103,10 +103,23 @@ footer {width: 100%; height: 200px; display:flex; }
 .customer_ul li{margin: 10 0 0px;}
 .sns ul{margin-top: 20px;display: flex; justify-content: space-between; gap: 25px;}
 
-.webton {width: 1120px; height: 300px; ;margin: 0 auto;background-color: #b0ed07;}
-.bigbox{display: flex;}
-.wb123 {background-color: bisque;; }
-.wb1 {width: 370px; height: 100px; background-color: #4e14ed; margin: 2px; display: flex; }
-.wb_img{width: 80px;height: 100px;background-color: aliceblue;}
-.wb_img1{width: 80px;height: 100px;background-color: rgb(16, 241, 106);}
-.wb_img2{width: 210px;height: 100px;background-color: rgb(119, 9, 236);}
+.webton {width: 1120px; margin: 0 auto;
+margin-top: 70px;}
+.bigbox{display: flex; margin: 10px 0 20px; }
+
+.wb1 {width: 370px; height: 100px;  margin: 2px; display: flex; }
+
+.wb_img{border: 1px solid black; width: 80px;height: 100px;}
+.wb_img1{display: flex; justify-content: center;align-items: center;width: 80px;height: 100px;}
+.wb_img2{display: flex; flex-direction: column; justify-content: center; }
+
+.event1 {width: 1120px; height: 150px; margin-top:50px;}
+.three {display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+.ev1 {width: 32.6%; height: 100px; border: 1px solid black;  border-radius: 7px; gap: 30px; display: flex; justify-content: center; align-items: center;}
+
+.nowtime {width: 1120px; height: 300px; margin: 0 auto; background-color: aqua;}
+.comic {background-color: #b0ed07; display: flex;  }
+.sosul123 {width: 33%; height: 100px; display: flex;  background-color: gold;}
+.sosul {display: flex; justify-content: center; align-items: center;width: 20%; height: 100%; border: 1px solid black; }
+.sosu2 {display: flex; justify-content: center; align-items: center; width: 20%; height: 100%; border: 1px solid black; }
+.sosul3 {display: flex; justify-content: center; flex-direction: column; border: 1px solid black; }

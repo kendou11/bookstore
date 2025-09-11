@@ -25,11 +25,11 @@
 }
 
 .new {
-  height: 300px;
+  height: 300px; margin-top: 20px;
 }
 
-.container > h3 {margin-top: 50px;}
+.container > h3 {margin: 70px 0 0;}
 
-.discovery {height: 300px;}
+.discovery {height: 300px; margin-top: 20px;}
 
-.discovery_2 {height: 250px;}
+.discovery_2 {height: 300px; margin-top: 20px;}
