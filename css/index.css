@@ -11,10 +11,12 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #444;
+  /*background: #444;*/
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 7px;
 }
 
 .swiper-slide img {
@@ -33,3 +35,12 @@
 .discovery {height: 300px; margin-top: 20px;}
 
 .discovery_2 {height: 300px; margin-top: 20px;}
+
+.new_item .swiper-slide{
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.new_item .swiper-slide img {width: auto; height: 150px;}
+.new_item .swiper-slide h3 {font-size: 16px; width: 100%;}
+
