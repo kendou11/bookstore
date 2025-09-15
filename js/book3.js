@@ -61,3 +61,12 @@ async function bookData() {
 }
 
 bookData();
+
+const days = document.querySelectorAll('.hdc');
+
+days.forEach(div => {
+  div.addEventListener('click', () => {
+    days.forEach(d => d.classList.remove('active'));
+    div.classList.add('active');
+  });
+});
