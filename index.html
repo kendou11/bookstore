@@ -1,478 +1,82 @@
-<!DOCTYPE html>
-<html lang="ko">
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h2 class="my-4">마이페이지</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리디 RIDI - 웹툰 만화 웹소설</title>
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- fontawesome cdn -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
-
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
-</head>
-
-<body>
-    <header>
-        <div class="container">
-            <div class="header_top">
-                <div class="logo">
-                    <a href="https://ridibooks.com/webtoon/recommendation"><img class="img1" src="./img/리디1.png"
-                            alt="로고이미지"></img></a>
-
-                </div>
-                <div class="h_right">
-
-                    <div class="search_icon">
-                        <svg width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg" class="fig-1hsho1o">
-                            <path fill-rule="evenodd"
-                                d="M13.28 8.18a5.1 5.1 0 11-10.2 0 5.1 5.1 0 0110.2 0zm-1.031 5.069a6.5 6.5 0 11.991-.989l4.695 4.695a.7.7 0 11-.99.99l-4.696-4.696z">
-                            </path>
-                        </svg>
-                        <input type="text" value="" class="search">
-                    </div>
-                    <div class="mypage">
-                        <a
-                            href="https://ridibooks.com/account/login?return_url=https%3A%2F%2Fridibooks.com%2Fwebtoon%2Frecommendation">
-                            <h4>로그인/회원가입</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="header_b">
-                <nav>
-                    <ul>
-                        <li><a href="#">웹툰</a></li>
-                        <li><a href="https://ridibooks.com/comics/ebook">만화</a></li>
-                        <li><a href="https://ridibooks.com/romance/webnovel">웹소설</a></li>
-                        <li><a href="https://ridibooks.com/ebook/recommendation">도서</a></li>
-                        <li><a href="https://select.ridibooks.com/home">셀렉트 </a></li>
-                    </ul>
-                </nav>
-                <div class="category">
-                    <h4><a
-                            href="https://ridibooks.com/account/login?return_url=https%3A%2F%2Fridibooks.com%2Forder%2Fcheckout%2Fcash">☰
-                            전체 카테고리</h4></a>
-
-                    <h4><a
-                            href="https://ridibooks.com/account/login?return_url=https%3A%2F%2Fridibooks.com%2Forder%2Fcheckout%2Fcash">캐시충전
-                    </h4></a>
-                </div>
-            </div>
-
-        </div>
-        </div>
-    </header>
-    <hr>
-    <div class="container">
-        <div class="header_c">
-
-            <ul>
-                <li class="hdc" onclick="hdct('추천')"><a href="#">추천</a></li>
-                <li class="hdc" onclick="hdct('로맨스')"><a href="#">로맨스</a></li>
-                <li class="hdc" onclick="hdct('BL')"><a href="#">BL</a></li>
-                <li class="hdc" onclick="hdct('액션/무협')"><a href="#">액션/무협</a></li>
-                <li class="hdc" onclick="hdct('공포/추리')"><a href="#">공포/추리</a></li>
-                <li class="hdc" onclick="hdct('드라마')"><a href="#">드라마</a></li>
-                <li class="hdc" onclick="hdct('GL')"><a href="#">GL</a></li>
-            </ul>
-
-
-        </div>
+  <div class="card mb-4">
+    <div class="card-header">
+      <h5>내 정보</h5>
     </div>
-
-
-
-
-    <div id="slider">
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="./img/메인 1.png" alt="">
-                </div>
-                <div class="swiper-slide"><img src="./img/메인2.png" alt=""></div>
-                <div class="swiper-slide"><img src="./img/메인3.png" alt=""></div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-3 fw-bold">아이디</div>
+        <div class="col-md-9">{{ user.userid }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3 fw-bold">이름</div>
+        <div class="col-md-9">{{ user.name }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3 fw-bold">이메일</div>
+        <div class="col-md-9">{{ user.email }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3 fw-bold">전화번호</div>
+        <div class="col-md-9">{{ user.tel_number }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3 fw-bold">생년월일</div>
+        <div class="col-md-9">{{ user.birthday.strftime('%Y년 %m월 %d일') }}</div>
+      </div>
+      {% if user.is_expert %}
+      <div class="row mb-3">
+        <div class="col-md-3 fw-bold">제공 서비스</div>
+        <div class="col-md-9">{{ user.service }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3 fw-bold">활동 지역</div>
+        <div class="col-md-9">{{ user.location }}</div>
+      </div>
+      {% endif %}
     </div>
-
-    <div id="icon_menu">
-        <a href="https://ridibooks.com/new-releases/webtoon?type=single">
-            <div class="icon">N</div>
-            <span>신간</span>
-        </a>
-
-        <a href="https://ridibooks.com/ridi-only/webtoon">
-            <div class="icon">R.only</div>
-            <span>리디온니</span>
-        </a>
-        <a href="https://ridibooks.com/event/61442">
-            <div class="icon">Ridamu</div>
-            <span>리다무</span>
-        </a>
-        <a href="https://ridibooks.com/event/webtoon">
-            <div class="icon">Event</div>
-            <span>이벤트</span>
-        </a>
-        <a href="https://ridibooks.com/event/83990">
-            <div class="icon">100원</div>
-            <span>ALL100</span>
-        </a>
-        <a href="https://ridibooks.com/event/85807">
-            <div class="icon">신작</div>
-            <span>이달의 신작</span>
-        </a>
-        <a href="https://ridibooks.com/event/80628">
-            <div class="icon">단편</div>
-            <span>단편작</span>
-        </a>
+    <div class="card-footer">
+      <a href="{{ url_for('auth.edit_profile') }}" class="btn btn-primary">정보 수정</a>
+      <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+        비밀번호 변경
+      </button>
     </div>
-    <script src="./js/book2.js"></script>
+  </div>
+</div>
 
-    <section class="webton">
-        <h3 style="width: 100%;">웹툰 실시간 랭킹</h3>
-        <div class="bigbox">
-            <ul class="wb123">
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/웹툰베스트1.png" alt=""></div>
-                    <div class="wb_img1">1</div>
-                    <div class="wb_img2">
-                        <h4>사내에서는 정숙할 것</h4>
-                        <h5>김차차 외 1명, 8화 무료</h5>
-                    </div>
-                </li>
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/귀멸의 칼날.png" alt=""></div>
-                    <div class="wb_img1">2</div>
-                    <div class="wb_img2">
-                        <h4>음란한 딸기우유</h4>
-                        <h5>연못 외 2명, 7화 무료</h5>
-                </li>
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/나루토.png" alt=""></div>
-                    <div class="wb_img1">3</div>
-                    <div class="wb_img2">
-                        <h4>[순정 단편선]크고 아름다운</h4>
-                        <h5>메타툰 외 3명, 2화 무료</h5>
-                </li>
-            </ul>
-            <ul class="wb123">
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/메달리스트.png" alt=""></div>
-                    <div class="wb_img1">1</div>
-                    <div class="wb_img2">
-                        <h4>폭야[완전판]</h4>
-                        <h5>핫퍼지코믹스 외 1명, 8화 무료</h5>
-                    </div>
-                </li>
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/여학교의 별.png" alt=""></div>
-                    <div class="wb_img1">2</div>
-                    <div class="wb_img2">
-                        <h4>타락 성녀가 악마와 더불어</h4>
-                        <h5>두근 8화 무료</h5>
-                </li>
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/주술회전.png" alt=""></div>
-                    <div class="wb_img1">3</div>
-                    <div class="wb_img2">
-                        <h4>배덕한 타인에게[완전판]</h4>
-                        <h5>핫퍼지코믹스 외 1명, 3화 무료</h5>
-                </li>
-            </ul>
-            <ul class="wb123">
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/원피스.png" alt=""></div>
-                    <div class="wb_img1">1</div>
-                    <div class="wb_img2">
-                        <h4>쓰레기 사정[완전판]</h4>
-                        <h5>명 외 2명, 3화 무료</h5>
-                    </div>
-                </li>
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/죽음에서 돌아온.png" alt=""></div>
-                    <div class="wb_img1">2</div>
-                    <div class="wb_img2">
-                        <h4>폐하의 밤[완전판]</h4>
-                        <h5>핫퍼지코믹스 외 1명, 3화 무료</h5>
-                </li>
-                <li class="wb1">
-                    <div class="wb_img"><img src="./img/패밀리레스토랑.png" alt=""></div>
-                    <div class="wb_img1">3</div>
-                    <div class="wb_img2">
-                        <h4>엘프의 짝짓기</h4>
-                        <h5>포푸리 5화 무료</h5>
-                </li>
-            </ul>
+<!-- 비밀번호 변경 모달 -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">비밀번호 변경</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post" action="{{ url_for('auth.change_password') }}">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="current_password" class="form-label">현재 비밀번호</label>
+            <input type="password" class="form-control" id="current_password" name="current_password" required>
+          </div>
+          <div class="mb-3">
+            <label for="new_password" class="form-label">새 비밀번호</label>
+            <input type="password" class="form-control" id="new_password" name="new_password" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirm_password" class="form-label">비밀번호 확인</label>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+          </div>
         </div>
-    </section>
-
-
-
-
-    <div class="container">
-        <h3> 지금 많이 읽고 있는 작품</h3>
-        <div class="new">
-
-            <!-- Swiper -->
-            <div class="swiper new_item">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+          <button type="submit" class="btn btn-primary">변경하기</button>
         </div>
-
-        <div class="event1">
-            <h3>이벤트 보러가기</h3>
-            <ul class="three">
-                <li class="ev1"><a
-                        href="http://ridibooks.com/books/6039000001?_rdt_sid=webtoon_recommendation_selection_carousel"><img
-                            src="./img/오직 리디에서만 1.png" alt=""></a></li>
-                <li class="ev1"><a
-                        href="http://ridibooks.com/books/1239021342?_rdt_sid=webtoon_recommendation_selection_carousel"><img
-                            src="./img/오직 리디에서만 2.png" alt=""></a></li>
-                <li class="ev1"><a
-                        href="https://ridibooks.com/books/5285001465?_rdt_sid=webtoon_recommendation_selection_carousel"><img
-                            src="./img/오직 리디에서만 3.png" alt=""></a></li>
-            </ul>
-
-        </div>
-
-        <h3> 오늘, 리디의 발견</h3>
-        <div class="discovery">
-            <!-- Swiper -->
-            <div class="swiper new_item">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-
-        <script src="./js/book3.js"></script>
-
-        <h3> 지금, 리디에서만 볼 수 있는 웹툰</h3>
-        <div class="container">
-            <div class="discovery_2">
-                <!-- Swiper -->
-                <div class="swiper new_item">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide"></div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-        </div>
+      </form>
     </div>
-    <script src="./js/book4.js"></script>
-
-    <section class="keyword">
-        <h3>웹툰/만화 키워드 검색</h3>
-        <ul class="keyword_ul">
-            <li><a
-                    href="https://ridibooks.com/keyword-finder/comic?set_id=21&tag_ids=3538-%EB%A1%9C%EB%A7%A8%EC%8A%A4%ED%8C%90%ED%83%80%EC%A7%80&page=1">#로맨스판타지</a>
-            </li>
-            <li><a
-                    href="https://ridibooks.com/keyword-finder/comic?set_id=21&tag_ids=3565-%ED%94%BC%ED%8F%90%EB%AC%BC&page=1">#피폐물</a>
-            </li>
-            <li><a
-                    href="https://ridibooks.com/keyword-finder/comic?set_id=21&tag_ids=3558-%EB%B9%99%EC%9D%98%2F%EC%98%81%ED%98%BC%EC%B2%B4%EC%9D%B8%EC%A7%80&page=1">#방의/영혼</a>
-            </li>
-            <li><a
-                    href="https://ridibooks.com/keyword-finder/comic?set_id=21&tag_ids=3537-%EB%A1%9C%EB%A7%A8%EC%8A%A4&page=1">#로맨스</a>
-            </li>
-            <li><a
-                    href="https://ridibooks.com/keyword-finder/comic?set_id=21&tag_ids=3589-%EC%A7%91%EC%B0%A9%EB%82%A8&page=1">#집작남</a>
-            </li>
-            <li><a
-                    href="https://ridibooks.com/keyword-finder/comic?set_id=21&tag_ids=3563-%EC%82%AC%EB%82%B4%EC%97%B0%EC%95%A0&page=1">#사내연애</a>
-            </li>
-            <li><a
-                    href="https://ridibooks.com/keyword-finder/comic?set_id=21&tag_ids=3623-%EC%99%84%EA%B2%B0&page=1">#완결</a>
-            </li>
-        </ul>
-    </section>
-
-    <section class="event">
-        <h3 style="width: 100%;">이벤트 보러가기</h3>
-        <div class="boxset">
-            <div class="eventbox"><a href="https://ridibooks.com/account/login?return_url=%2Fevent%2F86197"><img
-                        src="./img/이벤트보러가기1.png" alt=""></a>
-
-            </div>
-            <div class="eventbox"><a href="https://ridibooks.com/account/login?return_url=%2Fevent%2F86109"><img
-                        src="./img/이벤트보러가기2.png" alt=""></a>
-
-            </div>
-            <div class="eventbox"><a href="https://ridibooks.com/account/login?return_url=%2Fevent%2F86007"><img
-                        src="./img/이벤트보러가기3.png" alt=""></a>
-
-            </div>
-        </div>
-
-    </section>
-    <hr>
-
-
-    <footer>
-        <div class="foot">
-            <div class="foot_left">
-
-                <div class="customer">
-                    <ul class="customer_ul">
-                        <li class="ct">고객센터</li>
-                        <li>공지사항</li>
-
-                    </ul>
-
-
-                </div>
-                <div class="memo">
-                    <ul>
-                        <li>서비스</li>
-                        <li>제휴카드</li>
-                        <li>뷰어 다운로드</li>
-                        <li>CP사이트</li>
-                        <li>리디바탕</li>
-                    </ul>
-                </div>
-
-                <div class="memo_2">
-                    <ul>
-                        <li>기타문의</li>
-                        <li>콘텐츠 제공 문의</li>
-                        <li>사업 제휴 문의</li>
-
-                    </ul>
-                </div>
-                <div class="memo_3">
-                    <ul>
-                        <li>회사</li>
-                        <li>회사 소개</li>
-                        <li>인재 채용</li>
-
-                    </ul>
-                </div>
-
-            </div>
-
-
-            <div class="foot_right">
-                <div class="sns">
-                    <ul class="snssum">
-                        <li><img src="./img/페이스북.png" alt=""></li>
-                        <li><img src="./img/인스타그램.png" alt=""></li>
-                        <li><img src="./img/x.png" alt=""></li>
-                        <li><img src="./img/오른쪽삼각형.png" alt=""></li>
-                        <li><img src="./img/틱톡.png" alt=""></li>
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
-
-        <div class="foot_bottom">
-            <ul class="info1">
-                <li>리디(주) 사업자 정보</li>
-
-            </ul>
-
-            <div class="info1">
-                <ul class="info2">
-                    <li>이용약관</li>
-                    <li>개인정보 처리방침</li>
-                    <li>청소년보호정책</li>
-                    <li>사업S자정보확인</li>
-                </ul>
-            </div>
-        </div>
-
-
-        <!-- <div class="info_bt">
-            <div class="info1">
-                <ul class="info2">
-                    <li>이용약관</li>
-                    <li>개인정보 처리방침</li>
-                    <li>청소년보호정책</li>
-                    <li>사업자정보확인</li>
-                </ul>
-            </div>
-        </div> -->
-
-    </footer>
-
-
-
-
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        //slider
-        var swiper = new Swiper(".mySwiper", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-
-        // new
-        var swiper = new Swiper(".new_item", {
-            slidesPerView: 6,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-
-
-
-    </script>
-
-
-
-</body>
-
-</html>
+  </div>
+</div>
+{% endblock %}
